@@ -1,0 +1,26 @@
+<h1 class="text-center pb-4 pt-4">All our flats(<%= @flats.count %>)</h1>
+<ol class="d-flex flex-wrap" >
+    <% @flats.each do |flat| %>
+       <div class= "card p-3 me-4 mb-3 bg-light" style="width: 20rem; height: 24rem">
+       <img src= "https://source.unsplash.com/featured/?bedroom" class="card-img-top w-100 h-50">
+        <div class="card-body">
+            <li><%= link_to flat.name, flat_path(flat), class:"card-title" %>
+        <div>
+        <%= flat.address %>
+        </div>
+        </div>
+        <div class="card-text d-flex justify-content-between mb-2">
+        <div><i class="fa-solid fa-person"></i><%= flat.number_of_guests%></div>
+        <div><%= flat.price_per_night %>€</div>
+        </div>
+        <div>
+            <%= link_to "More info", flat_path(flat), class:"me-2 text-success"  %>
+            <%= link_to "Edit", edit_flat_path(flat),class:"me-2 text-warning"  %>
+            <%= link_to raw('<i class="fa-solid fa-trash"></i>'), flat_path(flat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"pe-2 delete text-danger" %>
+        </div>
+        </li>
+
+        </div>
+    <% end %>
+
+</ol>

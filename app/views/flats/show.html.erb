@@ -1,0 +1,30 @@
+<img src="https://source.unsplash.com/featured/?bedroom" id="bed">
+<h1 class="mt-5 mb-5">More informations about <%= @flat.name %></h1>
+<div class="card-flat d-flex align-items-start ps-3 mb-5">
+    <div class="card p-2 me-3 " style="width: 36rem; height: 16rem ">
+        <div>
+                <h3><%= @flat.name %></h3>
+                <p><%= @flat.address%></p>
+        </div>
+        <div>
+                <h4>A bit more about this flat...</h4>
+                <%= @flat.description %>
+        </div>
+       <div>
+        <h4>Details</h4>
+        <div class="d-flex justify-content-between">
+         <div>
+             <i class="fa-solid fa-person"></i><%= @flat.number_of_guests%>
+         </div>
+        <div>
+        <%= @flat.price_per_night %>€
+        </div>
+        </div>
+     </div>
+    </div>
+  <div class= "card w-50 p-3">
+    <h4>Book this place!</h4>
+      <input type="date" id="date" class="mb-2">
+      <button class="btn btn-success w-25 ">Book</button>
+  </div>
+</div>
